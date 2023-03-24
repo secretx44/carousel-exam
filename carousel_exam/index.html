@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Carousel Exam</title>
+</head>
+<body>
+	<style>
+		.carousel img {
+				display: none;
+		}
+		h1 {
+				text-align: center;
+		}
+		.carousel{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				margin: auto;
+				display: flex;
+				justify-content: center;
+		}
+</style>
+</head>
+<body>
+<h1>My Carousel</h1>
+<div class="carousel">
+	<img src="./carousel.gif" alt="carousel">  <!-- this is the image that will be displayed in the carousel -->
+</div>
+
+ <!-- this is the javascript code for the carouse -->
+
+<script>
+		(function() {
+			const images = document.querySelectorAll('.carousel img');
+			let currentIndex = 0;
+			setInterval(() => {
+      images[currentIndex].style.display = 'none';
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].style.display = 'block';
+    }, 1000);
+
+	// the images will slide every 1 second because of the setInterval function
+
+})();
+</script>
+</body>
+</html>
